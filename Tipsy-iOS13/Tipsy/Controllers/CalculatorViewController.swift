@@ -2,18 +2,18 @@
 
 import UIKit
 
-class CalculatorViewController: UIViewController {
+final class CalculatorViewController: UIViewController {
     
-    var result = 0.0
-    var settingsString = ""
+    private var result = 0.0
+    private var settingsString = ""
 
-    @IBOutlet weak var billTextField: UITextField!
-    @IBOutlet weak var zeroPorcentageButton: UIButton!
-    @IBOutlet weak var tenPercentageButton: UIButton!
-    @IBOutlet weak var twentyPercentageButton: UIButton!
-    @IBOutlet weak var splitNumberLabel: UILabel!
+    @IBOutlet private weak var billTextField: UITextField!
+    @IBOutlet private weak var zeroPorcentageButton: UIButton!
+    @IBOutlet private weak var tenPercentageButton: UIButton!
+    @IBOutlet private weak var twentyPercentageButton: UIButton!
+    @IBOutlet private weak var splitNumberLabel: UILabel!
     
-    @IBAction func tipChanged(_ sender: UIButton) {
+    @IBAction private func tipChanged(_ sender: UIButton) {
         
         billTextField.endEditing(true)
         
@@ -23,11 +23,11 @@ class CalculatorViewController: UIViewController {
         sender.isSelected = true
     }
     
-    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+    @IBAction private func stepperValueChanged(_ sender: UIStepper) {
         splitNumberLabel.text = String(format: "%.0f", sender.value)
     }
     
-    @IBAction func calculatePressed(_ sender: UIButton) {
+    @IBAction private func calculatePressed(_ sender: UIButton) {
         
         if let billAmount = Double(billTextField.text!), let numberOfPeople = Double(splitNumberLabel.text!) {
             if zeroPorcentageButton.isSelected == true {

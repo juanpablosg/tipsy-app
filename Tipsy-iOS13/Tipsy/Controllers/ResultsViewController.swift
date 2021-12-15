@@ -1,15 +1,15 @@
 
 import UIKit
 
-class ResultsViewController: UIViewController {
+final class ResultsViewController: UIViewController {
     
     var result: String?
     var settings: String?
     
-    @IBOutlet weak var totalLabel: UILabel!
-    @IBOutlet weak var settingsLabel: UILabel!
+    @IBOutlet private weak var totalLabel: UILabel!
+    @IBOutlet private weak var settingsLabel: UILabel!
     
-    @IBAction func recalculatePressed(_ sender: UIButton) {
+    @IBAction private func recalculatePressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
